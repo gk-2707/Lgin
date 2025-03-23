@@ -1,0 +1,78 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 320px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  /* Input fields */
+  .input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Google button */
+  #googleLogin {
+    background-color: #db4437;
+  }
+  
+  #googleLogin img {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  #googleLogin:hover {
+    background-color: #c1351d;
+  }
+  
+  /* Logout button */
+  #logoutBtn {
+    background-color: #ff4d4d;
+  }
+  
+  #logoutBtn:hover {
+    background-color: #e60000;
+  }
+  
+  /* User Info */
+  #user-info img {
+    border-radius: 50%;
+    margin-top: 12px;
+  }
+  
