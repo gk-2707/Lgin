@@ -1,44 +1,32 @@
+<!-- next.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Welcome!</h2>
-    <div id="user-info">
-      <!-- User data will be inserted here -->
+    <div class="container">
+        <h2>User Info</h2>
+        <img id="userPhoto" class="profile-pic" alt="User Photo" />
+        <p><strong>Name:</strong> <span id="userName"></span></p>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <button id="logout" class="logout-btn">Logout</button>
     </div>
-    <button id="logoutBtn">Logout</button>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // ✅ Retrieve user data from localStorage
-      const userData = JSON.parse(localStorage.getItem('user'));
-      const userDisplay = document.getElementById('user-info');
+    <script>
+        // Get user data from sessionStorage
+        document.getElementById("userName").textContent = sessionStorage.getItem('userName');
+        document.getElementById("userEmail").textContent = sessionStorage.getItem('userEmail');
+        document.getElementById("userPhoto").src = sessionStorage.getItem('userPhoto');
 
-      if (userData) {
-        userDisplay.innerHTML = `
-          <p><strong>Name:</strong> ${userData.name || 'N/A'}</p>
-          <p><strong>Email:</strong> ${userData.email || 'N/A'}</p>
-          ${userData.photoURL 
-            ? `<img src="${userData.photoURL}" alt="Profile Picture" width="100">` 
-            : `<p>No Profile Picture</p>`}
-        `;
-      } else {
-        userDisplay.innerHTML = `<p>No user logged in.</p>`;
-      }
-
-      // ✅ Logout function
-      document.getElementById('logoutBtn').addEventListener('click', () => {
-        localStorage.clear();
-        window.location.href = 'index.html';
-      });
-    });
-  </script>
+        // Logout function
+        document.getElementById("logout").addEventListener("click", () => {
+            sessionStorage.clear(); // Clear session storage
+            window.location.href = "index.html"; // Redirect to login page
+        });
+    </script>
 </body>
 </html>
